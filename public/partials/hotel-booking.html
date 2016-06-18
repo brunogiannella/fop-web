@@ -1,0 +1,202 @@
+        <div class="page-title-container">
+            <div class="container">
+                <div class="page-title pull-left">
+                    <h2 class="entry-title">Dados para envio da oferta</h2>
+                </div>
+                <ul class="breadcrumbs pull-right">
+                    <li><a href="#">HOME</a></li>
+                    <li><a href="#">Hotéis</a></li>
+                    <li><a href="#">Lista de hotéis</a></li>
+                    <li class="active">Envio da oferta</li>
+                </ul>
+            </div>
+        </div>
+        <form class="booking-form">            
+            <section id="content" class="gray-area">
+                <div class="container">
+                    <div class="row">
+                        <div id="main" class="col-sms-6 col-sm-8 col-md-9">
+                            <div class="booking-section travelo-box">
+                                <div class="person-information">
+                                    <h2>Informações pessoais</h2>
+                                    <div class="form-group row">
+                                        <div class="col-sm-6 col-md-5">
+                                            <label>Nome</label>
+                                            <input type="text" class="input-text full-width" value="" placeholder="" ng-model="oferta.usuario.nome" />
+                                        </div>
+                                        <div class="col-sm-6 col-md-5">
+                                            <label>Sobrenome</label>
+                                            <input type="text" class="input-text full-width" value="" placeholder="" ng-model="oferta.usuario.sobrenome" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-sm-6 col-md-5">
+                                            <label>Endereço de e-mail</label>
+                                            <input type="text" class="input-text full-width" value="" placeholder="" ng-model="oferta.usuario.email" />
+                                        </div>
+                                        <div class="col-sm-6 col-md-5">
+                                            <label>Confirmar endereço de e-mail</label>
+                                            <input type="text" class="input-text full-width" value="" placeholder="" ng-model="oferta.usuario.emailConfirmacao" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-sm-6 col-md-5">
+                                            <label>Código do país</label>
+                                            <div class="selector">
+                                                <select class="full-width" ng-model="oferta.usuario.codigoPais">
+                                                    <option selected>Brasil (+55)</option>
+                                                    <option>Estados Unidos (+1)</option>
+                                                    <option>Reino Unido (+44)</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 col-md-5">
+                                            <label>Telefone</label>
+                                            <input type="text" class="input-text full-width" value="" placeholder="" ng-model="oferta.usuario.telefone" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" ng-model="oferta.usuario.opcaoOfertasEmail"> Eu quero receber ofertas do <span class="skin-color">faleopreco.com</span> no futuro.
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr />
+                                <div class="card-information">
+                                    <h2>Informações do pagamento</h2>
+                                    <p class="description">O lançamento no cartão só será realizado após a confirmação do hotel.</p>
+                                    <div class="form-group row">
+                                        <div class="col-sm-6 col-md-5">
+                                            <label>Bandeira</label>
+                                            <div class="selector">
+                                                <select class="full-width" ng-model="oferta.pagamento.bandeira">
+                                                    <option selected>selecione a bandeira</option>
+                                                    <option>VISA</option>
+                                                    <option>MasterCard</option>
+                                                    <option>Amex</option>
+                                                    <option>Elo</option>   
+                                                    <option>Hipercard</option>   
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 col-md-5">
+                                            <label>Nome do portador</label>
+                                            <input type="text" class="input-text full-width" value="" placeholder="" ng-model="oferta.pagamento.portador" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-sm-6 col-md-5">
+                                            <label>Número do cartão</label>
+                                            <input type="text" class="input-text full-width" value="" placeholder="" ng-model="oferta.pagamento.codigo_cartao" />
+                                        </div>
+                                        <div class="col-sm-6 col-md-5">
+                                            <label>Código de segurança</label>
+                                            <input type="text" class="input-text" size="3" maxlength="3" value="" placeholder="" ng-model="oferta.pagamento.codigo_seguranca" />
+                                        </div>
+                                    </di
+                                    <div class="form-group row">
+                                        <div class="col-sm-6 col-md-5">
+                                            <label>Data de validade</label>
+                                            <div class="constant-column-2">
+                                                <div class="selector">
+                                                    <select class="full-width" ng-model="oferta.pagamento.mes_validade">
+                                                        <option ng-selected="$first">mês</option>
+                                                        <option>01</option>
+                                                        <option>02</option>
+                                                        <option>03</option>
+                                                        <option>04</option>
+                                                        <option>05</option>
+                                                        <option>06</option>
+                                                        <option>07</option>
+                                                        <option>08</option>
+                                                        <option>09</option>
+                                                        <option>10</option>
+                                                        <option>11</option>
+                                                        <option>12</option>
+                                                    </select>
+                                                </div>
+                                                <div class="selector" >
+                                                    <select class="full-width" ng-model="oferta.pagamento.ano_validade">
+                                                        <option ng-selected="$first">ano</option>
+                                                        <option ng-repeat="anoCartao in listaAnosCartao" value="{{anoCartao}}">{{anoCartao}}</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr />
+                                <div class="form-group">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" ng-model="oferta.pagamento.termoAceite"> Clicando no botão abaixo, você aceita os <a href="#"><span class="skin-color">Termos and Condições</span></a> do faleopreco.com.
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-sm-6 col-md-5">
+                                        <button class="full-width btn-large" ng-click="efetivaOferta(oferta)">CONFIRMAR E ENVIAR OFERTA</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sidebar col-sms-6 col-sm-4 col-md-3">
+                            <div class="booking-details travelo-box">
+                                <h4>Detalhes da oferta</h4>
+                                <article class="image-box hotel listing-style1">
+                                    <div class="details">
+                                        <div class="travel-title">
+                                            <h5 class="box-title">{{oferta.destino}}</h5>
+                                            <a href="hotel-detailed.html" class="button">ALTERAR</a>
+                                        </div>
+                                    </div>
+                                    <div class="details">
+                                        <div class="feedback in-line">
+                                            <h5 class="box-title">Classificação do hotel</h5>
+                                            <div data-placement="bottom" data-toggle="tooltip" class="five-stars-container" title="{{oferta.classificacao}} estrelas"><span style="width: {{20 * oferta.classificacao}}%;" class="five-stars"></span></div>
+                                        </div>
+                                        <div class="constant-column-3 timing clearfix">
+                                            <div class="check-in">
+                                                <label>Entrada</label>
+                                                <span>{{oferta.dataEntrada}}<br />{{oferta.horaEntrada}}</span>
+                                            </div>
+                                            <div class="duration text-center">
+                                                <i class="soap-icon-clock"></i>
+                                                <span>{{oferta.diasEstadia}}</span>
+                                            </div>
+                                            <div class="check-out">
+                                                <label>Saída</label>
+                                                <span>{{oferta.dataSaida}}<br />{{oferta.horaSaida}}</span>
+                                            </div>
+                                        </div>
+                                        <div class="guest">
+                                            <small class="uppercase">{{oferta.quantidadeQuartos}} para <span class="skin-color">{{oferta.quantidadePessoas}}</span></small>
+                                        </div>
+                                    </div>
+                                </article>
+                                
+                                <h4>Demais informações</h4>
+                                <dl class="other-details">
+                                    <dt class="feature">Quantidade de quartos:</dt><dd class="value">{{oferta.quartos}}</dd>
+                                    <dt class="feature">Adultos:</dt><dd class="value">{{oferta.adultos}}</dd>
+                                    <dt class="feature">Crianças:</dt><dd class="value">{{oferta.criancas}}</dd>
+                                    <dt class="total-price">Quanto quero pagar:</dt><dd class="total-price-value">{{oferta.moeda}} {{oferta.preco}}</dd>
+                                </dl>
+                            </div>
+                            
+                            <div class="travelo-box contact-box">
+                                <h4>Precisa de ajuda?</h4>
+                                <p>Ficaremos satisfeitos em ajudá-lo!</p>
+                                <address class="contact-details">
+                                    <span class="contact-phone"><i class="soap-icon-phone"></i> 0800-FALEOPRECO</span>
+                                    <br>
+                                    <a class="contact-email" href="#">ajuda@faleopreco.com</a>
+                                </address>
+                           </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </form>

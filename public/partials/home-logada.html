@@ -1,0 +1,655 @@
+        <div class="page-title-container">
+            <div class="container">
+                <div class="page-title pull-left">
+                    <h2 class="entry-title">Minha conta</h2>
+                </div>
+                <ul class="breadcrumbs pull-right">
+                    <li>Home</li>
+                    <li class="active">Minha conta</li>
+                </ul>
+            </div>
+        </div>
+        <section id="content" class="gray-area" ng-controller="ConsultaOfertaController">
+            <div class="container">
+                <div id="main">
+                    <div class="tab-container full-width-style arrow-left dashboard">
+                        <ul class="tabs">
+                            <li class="active"><a data-toggle="tab" data-target="#dashboard" href=""><i class="soap-icon-anchor circle"></i>Dashboard</a></li>
+                            <li class=""><a data-toggle="tab" data-target="#profile" href=""><i class="soap-icon-user circle"></i>Meu perfil</a></li>
+                            <li class=""><a data-toggle="tab" data-target="#booking" href=""><i class="soap-icon-businessbag circle"></i>Minhas ofertas</a></li>
+                            <li class=""><a data-toggle="tab" data-target="#settings" href=""><i class="soap-icon-settings circle"></i>Configurações</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <div id="dashboard" class="tab-pane fade in active">
+                                <h1 class="no-margin skin-color">Olá {{sessao.nome}}, bem-vindo(a) ao faleopreco.com</h1>
+                                <p>Aqui você pode consultar o status das suas ofertas, seu histórico e muito mais!</p>
+                                <br />
+                                <div class="row block">
+                                    <div class="col-sm-6 col-md-3">
+                                        <a href="hotel-list-view.html">
+                                            <div class="fact blue">
+                                                <div class="numbers counters-box">
+                                                    <dl>
+                                                        <dt class="display-counter" data-value="3200">0</dt>
+                                                        <dd>Hotéis</dd>
+                                                    </dl>
+                                                    <i class="icon soap-icon-hotel"></i>
+                                                </div>
+                                                <div class="description">
+                                                    <i class="icon soap-icon-longarrow-right"></i>
+                                                    <span>Ver hotéis</span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-sm-6 col-md-3">
+                                        <a href="flight-list-view.html">
+                                            <div class="fact yellow">
+                                                <div class="numbers counters-box">
+                                                    <dl>
+                                                        <dt class="display-counter" data-value="4509">0</dt>
+                                                        <dd>Linhas aéreas</dd>
+                                                    </dl>
+                                                    <i class="icon soap-icon-plane"></i>
+                                                </div>
+                                                <div class="description">
+                                                    <i class="icon soap-icon-longarrow-right"></i>
+                                                    <span>Ver vôos</span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-sm-6 col-md-3">
+                                        <a href="car-list-view.html">
+                                            <div class="fact red">
+                                                <div class="numbers counters-box">
+                                                    <dl>
+                                                        <dt class="display-counter" data-value="3250">0</dt>
+                                                        <dd>Transportes VIP</dd>
+                                                    </dl>
+                                                    <i class="icon soap-icon-car"></i>
+                                                </div>
+                                                <div class="description">
+                                                    <i class="icon soap-icon-longarrow-right"></i>
+                                                    <span>Ver carros</span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-sm-6 col-md-3">
+                                        <a href="cruise-list-view.html">
+                                            <div class="fact green">
+                                                <div class="numbers counters-box">
+                                                    <dl>
+                                                        <dt class="display-counter" data-value="1570">0</dt>
+                                                        <dd>Cruzeiros</dd>
+                                                    </dl>
+                                                    <i class="icon soap-icon-cruise flip-effect"></i>
+                                                </div>
+                                                <div class="description">
+                                                    <i class="icon soap-icon-longarrow-right"></i>
+                                                    <span>Ver Cruzeiros</span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="notification-area">
+                                    <div class="info-box block">
+                                        <span class="close"></span>
+                                        <p>Este é o seu dashboard. Aqui você pode consultar o status de suas ofertas, alterar suas configurações, senhas e muito mais!</p>
+                                        <br />
+                                        <ul class="circle">
+                                            <li><span class="skin-color">Learn How It Works</span> — Watch a short video that shows you how Travelo works.</li>
+                                            <li><span class="skin-color">Get Help</span> — View our help section and FAQs to get started on Travelo. </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <div class="row block">
+                                    <div class="col-md-6 notifications">
+                                        <h2>Notifications</h2>
+                                        <a href="#">
+                                            <div class="icon-box style1 fourty-space">
+                                                <i class="soap-icon-plane-right takeoff-effect yellow-bg"></i>
+                                                <span class="time pull-right">JUST NOW</span>
+                                                <p class="box-title">London to Paris flight in <span class="price">$120</span></p>
+                                            </div>
+                                        </a>
+                                        <a href="#">
+                                            <div class="icon-box style1 fourty-space">
+                                                <i class="soap-icon-hotel blue-bg"></i>
+                                                <span class="time pull-right">10 Mins ago</span>
+                                                <p class="box-title">Hilton hotel &amp; resorts in <span class="price">$247</span></p>
+                                            </div>
+                                        </a>
+                                        <a href="#">
+                                            <div class="icon-box style1 fourty-space">
+                                                <i class="soap-icon-car red-bg"></i>
+                                                <span class="time pull-right">39 Mins ago</span>
+                                                <p class="box-title">Economy car for 2 days in <span class="price">$39</span></p>
+                                            </div>
+                                        </a>
+                                        <a href="#">
+                                            <div class="icon-box style1 fourty-space">
+                                                <i class="soap-icon-cruise green-bg"></i>
+                                                <span class="time pull-right">1 hour ago</span>
+                                                <p class="box-title">Baja Mexico 4 nights in <span class="price">$537</span></p>
+                                            </div>
+                                        </a>
+                                        <a href="#">
+                                            <div class="icon-box style1 fourty-space">
+                                                <i class="soap-icon-hotel blue-bg"></i>
+                                                <span class="time pull-right">2 hours ago</span>
+                                                <p class="box-title">Roosevelt hotel in <span class="price">$170</span></p>
+                                            </div>
+                                        </a>
+                                        <a href="#">
+                                            <div class="icon-box style1 fourty-space">
+                                                <i class="soap-icon-hotel blue-bg"></i>
+                                                <span class="time pull-right">3 hours ago</span>
+                                                <p class="box-title">Cleopatra Resort in <span class="price">$247</span></p>
+                                            </div>
+                                        </a>
+                                        <a href="#">
+                                            <div class="icon-box style1 fourty-space">
+                                                <i class="soap-icon-car red-bg"></i>
+                                                <span class="time pull-right">3 hours ago</span>
+                                                <p class="box-title">Elite Car per day in <span class="price">$48.99</span></p>
+                                            </div>
+                                        </a>
+                                        <a href="#">
+                                            <div class="icon-box style1 fourty-space">
+                                                <i class="soap-icon-cruise green-bg"></i>
+                                                <span class="time pull-right">last night</span>
+                                                <p class="box-title">Rome to Africa 1 week in <span class="price">$875</span></p>
+                                            </div>
+                                        </a>
+                                        <a href="#">
+                                            <div class="load-more">. . . . . . . . . . . . . </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <h2>Recent Activity</h2>
+                                        <div class="recent-activity">
+                                            <ul>
+                                                <li>
+                                                    <a href="#">
+                                                        <i class="icon soap-icon-plane-right circle takeoff-effect yellow-color"></i>
+                                                        <span class="price"><small>avg/person</small>$120</span>
+                                                        <h4 class="box-title">
+                                                            Indianapolis to Paris<small>Oneway flight</small>
+                                                        </h4>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <i class="icon soap-icon-car circle red-color"></i>
+                                                        <span class="price"><small>per day</small>$45.39</span>
+                                                        <h4 class="box-title">
+                                                            Economy Car<small>bmw mini</small>
+                                                        </h4>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <i class="icon soap-icon-cruise circle green-color"></i>
+                                                        <span class="price"><small>from</small>$578</span>
+                                                        <h4 class="box-title">
+                                                            Jacksonville to Asia<small>4 nights</small>
+                                                        </h4>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <i class="icon soap-icon-hotel circle blue-color"></i>
+                                                        <span class="price"><small>Avg/night</small>$620</span>
+                                                        <h4 class="box-title">
+                                                            Hilton Hotel &amp; Resorts<small>Paris france</small>
+                                                        </h4>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <i class="icon soap-icon-hotel circle blue-color"></i>
+                                                        <span class="price"><small>avg/night</small>$170</span>
+                                                        <h4 class="box-title">
+                                                            Roosevelt Hotel<small>new york</small>
+                                                        </h4>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <i class="icon soap-icon-plane-right circle takeoff-effect yellow-color"></i>
+                                                        <span class="price"><small>avg/person</small>$348</span>
+                                                        <h4 class="box-title">
+                                                            Mexico to England<small>return flight</small>
+                                                        </h4>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                            <a href="#" class="button green btn-small full-width">VIEW ALL ACTIVITIES</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <h4>Benefits of Tavelo Account</h4>
+                                        <ul class="benefits triangle hover">
+                                            <li><a href="#">Faster bookings with lesser clicks</a></li>
+                                            <li><a href="#">Track travel history &amp; manage bookings</a></li>
+                                            <li class="active"><a href="#">Manage profile &amp; personalize experience</a></li>
+                                            <li><a href="#">Receive alerts &amp; recommendations</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-4 previous-bookings image-box style14">
+                                        <h4>Your Previous Bookings</h4>
+                                        <article class="box">
+                                            <figure class="no-padding">
+                                                <a title="" href="#">
+                                                    <img alt="" src="http://placehold.it/63x59" width="63" height="59">
+                                                </a>
+                                            </figure>
+                                            <div class="details">
+                                                <h5 class="box-title"><a href="#">Half-Day Island Tour</a><small class="fourty-space"><span class="price">$35</span> Family Package</small></h5>
+                                            </div>
+                                        </article>
+                                        <article class="box">
+                                            <figure class="no-padding">
+                                                <a title="" href="#">
+                                                    <img alt="" src="http://placehold.it/63x59" width="63" height="59">
+                                                </a>
+                                            </figure>
+                                            <div class="details">
+                                                <h5 class="box-title"><a href="#">Ocean Park Tour</a><small class="fourty-space"><span class="price">$26</span> Per Person</small></h5>
+                                            </div>
+                                        </article>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <h4>Need Travelo Help?</h4>
+                                        <div class="contact-box">
+                                            <p>We would be more than happy to help you. Our team advisor are 24/7 at your service to help you.</p>
+                                            <address class="contact-details">
+                                                <span class="contact-phone"><i class="soap-icon-phone"></i> 1-800-123-HELLO</span>
+                                                <br>
+                                                <a class="contact-email" href="#">help@travelo.com</a>
+                                            </address>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="profile" class="tab-pane fade">
+                                <div class="view-profile">
+                                    <article class="image-box style2 box innerstyle personal-details">
+                                        <figure>
+                                            <a title="" href="#"><img width="270" height="263" alt="" src="http://placehold.it/270x263"></a>
+                                        </figure>
+                                        <div class="details">
+                                            <a href="#" class="button btn-mini pull-right edit-profile-btn">ALTERAR MEU PERFIL</a>
+                                            <h2 class="box-title fullname">{{sessao.nome}}&nbsp;{{sessao.sobrenome}}</h2>
+                                            <dl class="term-description">
+                                                <dt>nome de usuário:</dt><dd>{{sessao.email}}</dd>
+                                                <dt>nome:</dt><dd>{{sessao.nome}}</dd>
+                                                <dt>sobrenome:</dt><dd>{{sessao.sobrenome}}</dd>
+                                                <dt>telefone:</dt><dd>{{sessao.telefone}}</dd>
+                                                <dt>Data de nascimento:</dt><dd>{{sessao.dataNascimento}}</dd>
+                                            </dl>
+                                        </div>
+                                    </article>
+                                    <hr>
+                                    <h2>Sobre mim</h2>
+                                        <div class="intro">
+                                        <p>Vestibulum tristique, justo eu sollicitudin sagittis, metus dolor eleifend urna, quis scelerisque purus quam nec ligula. Suspendisse iaculis odio odio, ac vehicula nisi faucibus eu. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse posuere semper sem ac aliquet. Duis vel bibendum tellus, eu hendrerit sapien. Proin fringilla, enim vel lobortis viverra, augue orci fringilla diam, sed cursus elit mi vel lacus. Nulla facilisi. Fusce sagittis, magna non vehicula gravida, ante arcu pulvinar arcu, aliquet luctus arcu purus sit amet sem. Mauris blandit odio sed nisi porttitor egestas. Mauris in quam interdum purus vehicula rutrum quis in sem. Integer interdum lectus at nulla dictum luctus. Sed risus felis, posuere id condimentum non, egestas pulvinar enim. Praesent pretium risus eget nisi ullamcorper fermentum. Duis lacinia nisi ac rhoncus vestibulum.</p>
+                                    </div>
+                                    <hr>
+                                    <h2>Sugestões do dia</h2>
+                                    <div class="suggestions image-carousel style2" data-animation="slide" data-item-width="170" data-item-margin="22">
+                                        <ul class="slides">
+                                            <li>
+                                                <a href="#" class="hover-effect">
+                                                    <img src="http://placehold.it/170x170" alt="" />
+                                                </a>
+                                                <h5 class="caption">Adventure</h5>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="hover-effect">
+                                                    <img src="http://placehold.it/170x170" alt="" />
+                                                </a>
+                                                <h5 class="caption">Beaches &amp; Sun</h5>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="hover-effect">
+                                                    <img src="http://placehold.it/170x170" alt="" />
+                                                </a>
+                                                <h5 class="caption">Casinos</h5>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="hover-effect">
+                                                    <img src="http://placehold.it/170x170" alt="" />
+                                                </a>
+                                                <h5 class="caption">Family Fun</h5>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="hover-effect">
+                                                    <img src="http://placehold.it/170x170" alt="" />
+                                                </a>
+                                                <h5 class="caption">History</h5>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="hover-effect">
+                                                    <img src="http://placehold.it/170x170" alt="" />
+                                                </a>
+                                                <h5 class="caption">Adventure</h5>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <h4>Vantagens de ter uma conta no faleopreco.com</h4>
+                                            <ul class="benefits triangle hover">
+                                                <li><a href="#">Realizar ofertas com menos cliques</a></li>
+                                                <li><a href="#">Gerenciar ofertas realizadas</a></li>
+                                                <li class="active"><a href="#">Gerenciar perfil e personalizar experiências</a></li>
+                                                <li><a href="#">Receber alertas e notificações</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-4 previous-bookings image-box style14">
+                                            <h4>Your Previous Bookings</h4>
+                                            <article class="box">
+                                                <figure class="no-padding">
+                                                    <a title="" href="#">
+                                                        <img alt="" src="http://placehold.it/63x59" width="63" height="59">
+                                                    </a>
+                                                </figure>
+                                                <div class="details">
+                                                    <h5 class="box-title"><a href="#">Half-Day Island Tour</a><small class="fourty-space"><span class="price">$35</span> Family Package</small></h5>
+                                                </div>
+                                            </article>
+                                            <article class="box">
+                                                <figure class="no-padding">
+                                                    <a title="" href="#">
+                                                        <img alt="" src="http://placehold.it/63x59" width="63" height="59">
+                                                    </a>
+                                                </figure>
+                                                <div class="details">
+                                                    <h5 class="box-title"><a href="#">Ocean Park Tour</a><small class="fourty-space"><span class="price">$26</span> Per Person</small></h5>
+                                                </div>
+                                            </article>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <h4>Need Travelo Help?</h4>
+                                            <div class="contact-box">
+                                                <p>We would be more than happy to help you. Our team advisor are 24/7 at your service to help you.</p>
+                                                <address class="contact-details">
+                                                    <span class="contact-phone"><i class="soap-icon-phone"></i> 1-800-123-HELLO</span>
+                                                    <br>
+                                                    <a class="contact-email" href="#">help@travelo.com</a>
+                                                </address>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="edit-profile">
+                                    <form class="edit-profile-form">
+                                        <h2>Informações pessoais</h2>
+                                        <div class="col-sm-9 no-padding no-float">
+                                            <div class="row form-group">
+                                                <div class="col-sms-6 col-sm-6">
+                                                    <label>Nome</label>
+                                                    <input type="text" class="input-text full-width" placeholder="">
+                                                </div>
+                                                <div class="col-sms-6 col-sm-6">
+                                                    <label>Sobrenome</label>
+                                                    <input type="text" class="input-text full-width" placeholder="">
+                                                </div>
+                                            </div>
+                                            <div class="row form-group">
+                                                <div class="col-sms-6 col-sm-6">
+                                                    <label>E-mail</label>
+                                                    <input type="text" class="input-text full-width" placeholder="">
+                                                </div>
+                                                <div class="col-sms-6 col-sm-6">
+                                                    <label>Confirmação do e-mail</label>
+                                                    <input type="text" class="input-text full-width" placeholder="">
+                                                </div>
+                                            </div>
+                                            <div class="row form-group">
+                                                <div class="col-sms-6 col-sm-6">
+                                                    <label>Country Code</label>
+                                                    <div class="selector">
+                                                        <select class="full-width">
+                                                            <option selected>Brasil (+55)</option>
+                                                            <option>United Kingdom (+44)</option>
+                                                            <option>United States (+1)</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sms-6 col-sm-6">
+                                                    <label>Telefone</label>
+                                                    <input type="text" class="input-text full-width" placeholder="">
+                                                </div>
+                                            </div>
+                                            <label>Data de nascimento</label>
+                                            <div class="row form-group">
+                                                <div class="col-sms-4 col-sm-2">
+                                                    <div class="selector">
+                                                        <select class="full-width">
+                                                            <option value="">date</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sms-4 col-sm-2">
+                                                    <div class="selector">
+                                                        <select class="full-width">
+                                                            <option value="">month</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sms-4 col-sm-2">
+                                                    <div class="selector">
+                                                        <select class="full-width">
+                                                            <option value="">year</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <h2>Informações de contato</h2>
+                                            <div class="row form-group">
+                                                <div class="col-sms-6 col-sm-6">
+                                                    <label>Endereço</label>
+                                                    <input type="text" class="input-text full-width">
+                                                </div>
+                                                <div class="col-sms-6 col-sm-6">
+                                                    <label>Complemento</label>
+                                                    <input type="text" class="input-text full-width">
+                                                </div>
+                                            </div>
+                                            <div class="row form-group">
+                                                <div class="col-sms-6 col-sm-6">
+                                                    <label>País</label>
+                                                    <div class="selector">
+                                                        <select class="full-width">
+                                                            <option value="Brasil" selected>Brasil</option>
+                                                            <option value="Argentina" selected>Argentina</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sms-6 col-sm-6">
+                                                    <label>Estado</label>
+                                                    <div class="selector">
+                                                        <select class="full-width">
+                                                            <option value="">Selecione</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row form-group">
+                                                <div class="col-sms-6 col-sm-6">
+                                                    <label>Cidade</label>
+                                                    <div class="selector">
+                                                        <select class="full-width">
+                                                            <option value="">Selecione</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <h2>Foto do perfil</h2>
+                                            <div class="row form-group">
+                                                <div class="col-sms-12 col-sm-6 no-float">
+                                                    <div class="fileinput full-width">
+                                                        <input type="file" class="input-text" data-placeholder="escolher foto">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <h2>Descreva você</h2>
+                                            <div class="form-group">
+                                                <textarea rows="5" class="input-text full-width" placeholder="Por favor conte-nos um pouco sobre você"></textarea>
+                                            </div>
+                                            <div class="from-group">
+                                                <button type="submit" class="btn-medium col-sms-6 col-sm-4">ATUALIZAR MINHAS CONFIGURAÇÕES</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div id="booking" class="tab-pane fade">
+                                <h2>Minhas ofertas</h2>
+                                <div class="filter-section gray-area clearfix">
+                                    <form>
+                                        <label class="radio radio-inline">
+                                            <input type="radio" name="filtro" ng-model ="filtro" checked="checked" value="" />Todas
+                                        </label>
+                                        <label class="radio radio-inline">
+                                            <input type="radio" name="filtro" ng-model ="filtro" value="AGUARDANDO RESPOSTA" />Aguardando resposta
+                                        </label>
+                                        <label class="radio radio-inline">
+                                            <input type="radio" name="filtro" ng-model ="filtro" value="APROVADA" />Aprovadas
+                                        </label>
+                                        <label class="radio radio-inline">
+                                            <input type="radio" name="filtro" ng-model ="filtro" value="REJEITADA" />Rejeitadas
+                                        </label>
+                                        <label class="radio radio-inline">
+                                            <input type="radio" name="filtro" ng-model ="filtro" value="CANCELADA" />Canceladas
+                                        </label>
+                                        <div class="pull-right col-md-6 action">
+                                            <h5 class="pull-left no-margin col-md-4">Ordenar por:</h5>
+                                            <button class="btn-small white gray-color" ng-click="ordenar('data_inicio')">DATA</button>
+                                            <button class="btn-small white gray-color" ng-click="ordenar('status')">STATUS</button>
+                                        </div>
+                                    </form>
+                                </div>
+                           
+                                <div class="booking-history">
+                                    <div ng-repeat="oferta in ofertas | filter:{status: filtro} | orderBy: ordenacao">
+                                        <div class="booking-info clearfix" ng-class="{'cancelled': status == 'CANCELADA' }">
+                                            <div class="date">
+                                                <label class="month">{{oferta.data_inicio | getMonthName:true}}</label>
+                                                <label class="date">{{oferta.data_inicio | date: 'dd'}}</label>
+                                                <label class="day">{{oferta.data_inicio | getDayOfWeek:true}}</label>
+                                            </div>
+                                            <h4 class="box-title"><i class="icon soap-icon-hotel blue-color circle"></i>{{oferta.status}}<small>entrada: {{oferta.data_inicio | date:'dd/MM/yyyy'}}</small><small>saída: {{oferta.data_fim | date:'dd/MM/yyyy'}}</small></h4>
+                                            <dl class="info">
+                                                <dt>ID da oferta</dt>
+                                                <dd>{{oferta.id}}</dd>
+                                                <dt>Data da oferta</dt>
+                                                <dd>{{oferta.data_oferta | date:'dd/MM/yyyy'}}</dd>
+                                            </dl>
+                                            <button class="btn-mini status">VER DETALHES</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="settings" class="tab-pane fade">
+                                <h2>Configurações da conta</h2>
+                                <h5 class="skin-color">Alterar minha senha</h5>
+                                <form>
+                                    <div class="row form-group">
+                                        <div class="col-xs-12 col-sm-6 col-md-4">
+                                            <label>Senha atual</label>
+                                            <input type="password" class="input-text full-width">
+                                        </div>
+                                    </div>
+                                    <div class="row form-group">
+                                        <div class="col-xs-12 col-sm-6 col-md-4">
+                                            <label>Nova senha</label>
+                                            <input type="password" class="input-text full-width">
+                                        </div>
+                                    </div>
+                                    <div class="row form-group">
+                                        <div class="col-xs-12 col-sm-6 col-md-4">
+                                            <label>Confirmação da nova senha</label>
+                                            <input type="password" class="input-text full-width">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <button class="btn-medium">ALTERAR MINHA SENHA</button>
+                                    </div>
+                                </form>
+                                <hr>
+                                <h5 class="skin-color">Alterar meu e-mail</h5>
+                                <form>
+                                    <div class="row form-group">
+                                        <div class="col-xs-12 col-sm-6 col-md-4">
+                                            <label>E-mail atual</label>
+                                            <input type="text" class="input-text full-width">
+                                        </div>
+                                    </div>
+                                    <div class="row form-group">
+                                        <div class="col-xs-12 col-sm-6 col-md-4">
+                                            <label>Novo e-mail</label>
+                                            <input type="text" class="input-text full-width">
+                                        </div>
+                                    </div>
+                                    <div class="row form-group">
+                                        <div class="col-xs-12 col-sm-6 col-md-4">
+                                            <label>Confirmação do novo e-mail</label>
+                                            <input type="text" class="input-text full-width">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <button class="btn-medium">ALTERAR MEU E-MAIL</button>
+                                    </div>
+                                </form>
+                                <hr>
+                                <h5 class="skin-color">Envie-me emails quando:</h5>
+                                <form>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox"> Faleopreço tiver novas ofertas e promoções.
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox"> Ocorrer alteração de status das minhas ofertas.
+                                        </label>
+                                    </div>
+                                    <button class="btn-medium uppercase">Atualizar</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <script type="text/javascript">
+            tjq("#profile .edit-profile-btn").click(function(e) {
+                e.preventDefault();
+                tjq(".view-profile").fadeOut();
+                tjq(".edit-profile").fadeIn();
+            });
+
+            setTimeout(function() {
+                tjq(".notification-area").append('<div class="info-box block"><span class="close"></span><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus ab quis a dolorem, placeat eos doloribus esse repellendus quasi libero illum dolore. Esse minima voluptas magni impedit, iusto, obcaecati dignissimos.</p></div>');
+            }, 2000);
+            
+            tjq('a[href="#profile"]').on('shown.bs.tab', function (e) {
+                tjq(".view-profile").show();
+                tjq(".edit-profile").hide();
+            });
+        </script>

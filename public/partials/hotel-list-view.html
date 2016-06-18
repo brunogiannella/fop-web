@@ -1,0 +1,192 @@
+        <div class="page-title-container">
+            <div class="container">
+                <div class="page-title pull-left">
+                    <h2 class="entry-title">Hotéis encontrados</h2>
+                </div>
+                <ul class="breadcrumbs pull-right">
+                    <li><a href="#">HOME</a></li>
+                    <li><a href="#">Hotéis</a></li>
+                    <li class="active">Lista de hotéis</li>
+                </ul>
+            </div>
+        </div>
+        <form ng-submit="confirmaOferta(oferta)">
+            <section id="content">
+                <div class="container">
+                    <div id="main">
+                        <div class="row">
+                            <div class="col-sm-4 col-md-3">
+                                <h4 class="search-results-title"><i class="soap-icon-search"></i><b>{{hoteis.length}}</b> hotéis encontrado(s).</h4>
+                                <div class="toggle-container filters-container">
+                                    
+                                    <div class="panel style1 arrow-right">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" href="#rating-filter" class="collapsed">Avaliações de usuários</a>
+                                        </h4>
+                                        <div id="rating-filter" class="panel-collapse collapse filters-container">
+                                            <div class="panel-content">
+                                                <div id="rating" class="five-stars-container editable-rating"></div>
+                                                <br />
+                                                <small>2458 avaliações</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="panel style1 arrow-right">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" href="#accomodation-type-filter" class="collapsed">Tipo de acomodação</a>
+                                        </h4>
+                                        <div id="accomodation-type-filter" class="panel-collapse collapse">
+                                            <div class="panel-content">
+                                                <ul class="check-square filters-option">
+                                                    <li><a href="#">Todos<small>(722)</small></a></li>
+                                                    <li class="active"><a href="#">Hotéis<small>(982)</small></a></li>
+                                                    <li><a href="#">Resorts<small>(127)</small></a></li>
+                                                    <li><a href="#">Pousadas<small>(158)</small></a></li>
+                                                </ul>
+                                                <a class="button btn-mini">Mais</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="panel style1 arrow-right">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" href="#amenities-filter" class="collapsed">Comodidades</a>
+                                        </h4>
+                                        <div id="amenities-filter" class="panel-collapse collapse">
+                                            <div class="panel-content">
+                                                <ul class="check-square filters-option">
+                                                    <li><a href="#">Banheiro<small>(722)</small></a></li>
+                                                    <li><a href="#">TV a cabo<small>(982)</small></a></li>
+                                                    <li class="active"><a href="#">Ar condicionado<small>(127)</small></a></li>
+                                                    <li class="active"><a href="#">Frigobar<small>(222)</small></a></li>
+                                                    <li><a href="#">Wi - Fi<small>(158)</small></a></li>
+                                                    <li><a href="#">Permite pets<small>(439)</small></a></li>
+                                                    <li><a href="#">Serviço de quarto<small>(52)</small></a></li>
+                                                </ul>
+                                                <a class="button btn-mini">Mais</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="panel style1 arrow-right">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" href="#modify-search-panel" class="collapsed">Modificar pesquisa
+                                        </h4>
+                                        <div id="modify-search-panel" class="panel-collapse collapse">
+                                            <div class="panel-content">
+                                                <form method="post">
+                                                    <div class="form-group">
+                                                        <label>Destino</label>
+                                                        <input type="text" class="input-text full-width" placeholder="" value="Paris" />
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>Data de entrada</label>
+                                                        <div class="datepicker-wrap">
+                                                            <input type="text" name="date_from" class="input-text full-width" placeholder="dd/mm/aaaa" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>Data de saída</label>
+                                                        <div class="datepicker-wrap">
+                                                            <input type="text" name="date_to" class="input-text full-width" placeholder="dd/mm/aaaa" />
+                                                        </div>
+                                                    </div>
+                                                    <br />
+                                                    <button class="btn-medium icon-check uppercase full-width">Fale o preço</button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-8 col-md-9">
+                                <div class="sort-by-section clearfix">
+                                    <h4 class="sort-by-title block-sm">Classificar por:</h4>
+                                    <ul class="sort-bar clearfix block-sm">
+                                        <li class="sort-by-name"><a class="sort-by-container" href="#"><span>nome</span></a></li>
+                                        <li class="clearer visible-sms"></li>
+                                        <li class="sort-by-rating active"><a class="sort-by-container" href="#"><span>avaliação</span></a></li>
+                                        <li class="sort-by-popularity"><a class="sort-by-container" href="#"><span>popularidade</span></a></li>
+                                    </ul>
+                                    
+                                    <ul class="swap-tiles clearfix block-sm">
+                                        <li class="swap-list active">
+                                            <a href="hotel-list-view.html"><i class="soap-icon-list"></i></a>
+                                        </li>
+                                        <li class="swap-grid">
+                                            <a href="hotel-grid-view.html"><i class="soap-icon-grid"></i></a>
+                                        </li>
+                                        <li class="swap-block">
+                                            <a href="hotel-block-view.html"><i class="soap-icon-block"></i></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="hotel-list listing-style3 hotel">
+                                    <article class="box" ng-repeat="hotel in hoteis">
+                                        <figure class="col-sm-5 col-md-4">
+                                            <a title="" href="ajax/slideshow-popup.html" class="hover-effect popup-gallery"><img width="270" height="160" alt="" src="http://placehold.it/270x160"></a>
+                                        </figure>
+                                        <div class="details col-sm-7 col-md-8">
+                                            <div>
+                                                <div>
+                                                    <h4 class="box-title">{{hotel.nome}}<small><i class="soap-icon-departure yellow-color"></i>&nbsp;{{hotel.endereco.bairro}}, {{hotel.endereco.cidade}}</small></h4>
+                                                    <div class="amenities">
+                                                        <i class="soap-icon-wifi circle"></i>
+                                                        <i class="soap-icon-fitnessfacility circle"></i>
+                                                        <i class="soap-icon-fork circle"></i>
+                                                        <i class="soap-icon-television circle"></i>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <div class="five-stars-container">
+                                                        <span class="five-stars" style="width: {{hotel.classificacao * 20}}%;"></span>
+                                                    </div>
+                                                    <span class="review">{{hotel.quantidadeAvaliacoes}} avaliações</span>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <p>{{hotel.descricao}}</p>
+                                                <div>
+                                                    <a class="button btn-small full-width text-center" title="" href="#" ng-click="removeItem($index);$event.preventDefault();$event.stopPropagation();">REMOVER</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </article>
+                                </div>
+                                <button type="submit" class="full-width uppercase">Enviar proposta</button>    
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </form>
+        
+        <!-- load page Javascript -->
+        
+        <script type="text/javascript">
+            //tjq(document).ready(function() {
+                tjq("#price-range").slider({
+                    range: true,
+                    min: 0,
+                    max: 1000,
+                    values: [ 100, 800 ],
+                    slide: function( event, ui ) {
+                        tjq(".min-price-label").html( "R$" + ui.values[ 0 ]);
+                        tjq(".max-price-label").html( "R$" + ui.values[ 1 ]);
+                    }
+                });
+                tjq(".min-price-label").html( "R$" + tjq("#price-range").slider( "values", 0 ));
+                tjq(".max-price-label").html( "R$" + tjq("#price-range").slider( "values", 1 ));
+                
+                tjq("#rating").slider({
+                    range: "min",
+                    value: 40,
+                    min: 0,
+                    max: 50,
+                    slide: function( event, ui ) {
+                        
+                    }
+                });
+            //});
+        </script>

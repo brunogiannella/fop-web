@@ -1,0 +1,258 @@
+            <section id="content" class="image-bg1">
+                <div class="container">
+                    <div class="row">
+                        <div id="main" class="col-sm-8 col-md-9">
+                            <div class="search-box-wrapper style1">
+                                <div class="search-box">
+                                    <ul class="search-tabs clearfix">
+                                        <li ng-class="{'active': opcaoHome == 'hoteis'}"><a data-target="#hotels-tab" href="" data-toggle="tab" ng-click="setOpcaoHome('hoteis')"><i class="soap-icon-hotel"></i>HOTÉIS</a></li>
+                                        <li ng-class="{'active': opcaoHome == 'voos'}"><a id="flights-link" data-target="#flights-tab" href="" data-toggle="tab" ng-click="setOpcaoHome('voos')"><i class="soap-icon-plane-right takeoff-effect"></i>PASSAGENS AÉREAS</a></li>
+                                    </ul>
+                                    <div class="visible-mobile">
+                                        <ul id="mobile-search-tabs" class="search-tabs clearfix">
+                                            <li><a href="#hotels-tab">HOTÉIS</a></li>
+                                            <li class="active"><a href="#flights-tab">PASSAGENS AÉREAS</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="search-tab-content">
+                                        <div id="hotels-tab" class="tab-pane fade in" ng-class="{'active': opcaoHome == 'hoteis'}" >
+                                            <form ng-submit="pesquisaHotel(oferta)">
+                                                <div class="title-container">
+                                                    <h2 class="search-title">Encontre os melhores hotéis</h2>
+                                                    <p>Seu novo jeito de fazer reservas!</p>
+                                                    <i class="soap-icon-hotel"></i>
+                                                </div>
+                                                <div class="search-content">
+                                                    <h5 class="title">Onde</h5>
+                                                    <label>Destino</label>
+                                                        <input type="text" class="input-text full-width"
+                                                            ng-model="oferta.destino" 
+                                                            placeholder="Informe o nome do hotel ou a cidade de destino"
+                                                            uib-typeahead="destino._id for destino in destinos | filter:$viewValue | limitTo:20"
+                                                            typeahead-min-length='1' typeahead-show-hint="false">
+                                                    <hr>
+                                                    <h5 class="title">Quando</h5>
+                                                    <div class="row">
+                                                        <div class="col-xs-6">
+                                                            <label>Entrada</label>
+                                                            <div class="datepicker-wrap">
+                                                                <input type="text" class="input-text full-width" placeholder="dd/mm/aaaa" ng-model="oferta.dataEntrada" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xs-6">
+                                                            <label>Saída</label>
+                                                            <div class="datepicker-wrap">
+                                                                <input type="text" class="input-text full-width" placeholder="dd/mm/aaaa" ng-model="oferta.dataSaida" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <hr>
+                                                    <h5 class="title">Quem</h5>
+                                                    <div class="row">
+                                                        <div class="col-xs-4">
+                                                            <label>QUARTOS</label>
+                                                            <div class="selector">
+                                                                <select class="full-width" id="optQuartos" ng-model="oferta.quartos" ng-init="oferta.quartos=1">
+                                                                    <option value="1">01</option>
+                                                                    <option value="2">02</option>
+                                                                    <option value="3">03</option>
+                                                                    <option value="4">04</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xs-4">
+                                                            <label>ADULTOS</label>
+                                                            <div class="selector">
+                                                                <select class="full-width" ng-model="oferta.adultos" ng-init="oferta.adultos=1">
+                                                                    <option value="1">01</option>
+                                                                    <option value="2">02</option>
+                                                                    <option value="3">03</option>
+                                                                    <option value="4">04</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xs-4">
+                                                            <label>CRIANÇAS</label>
+                                                            <div class="selector">
+                                                                <select class="full-width" ng-model="oferta.criancas" ng-init="oferta.criancas=1">
+                                                                    <option value="1">01</option>
+                                                                    <option value="2">02</option>
+                                                                    <option value="3">03</option>
+                                                                    <option value="4">04</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <hr>
+                                                    <button type="submit" class="full-width uppercase">Fale o preço!</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div id="flights-tab" class="tab-pane fade in" ng-class="{'active': opcaoHome == 'voos'}" >
+                                            <form action="flight-list-view.html" method="post">
+                                                <div class="title-container">
+                                                    <h2 class="search-title">Encontre as melhores ofertas</h2>
+                                                    <p>Sua passagem aérea pelo preço que você quer pagar.</p>
+                                                    <i class="soap-icon-plane-right takeoff-effect"></i>
+                                                </div>
+                                                <div class="search-content">
+                                                    <h5 class="title">Onde</h5>
+                                                    <div class="row">
+                                                        <div class="col-xs-6">
+                                                            <label>Origem</label>
+                                                            <input type="text" class="input-text full-width" placeholder="informe a sua cidade de origem" />
+                                                        </div>
+                                                        <div class="col-xs-6">
+                                                            <label>Destino</label>
+                                                            <input type="text" class="input-text full-width" placeholder="informe a sua cidade de destino" />
+                                                        </div>
+                                                    </div>
+                                                    <hr>
+                                                    <h5 class="title">Quando</h5>
+                                                    <label>Data de ida</label>
+                                                    <div class="row">
+                                                        <div class="col-xs-6 col-md-5">
+                                                            <div class="datepicker-wrap">
+                                                                <input type="text" class="input-text full-width" placeholder="selecione a data" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xs-6 col-md-5">
+                                                            <div class="selector">
+                                                                <select>
+                                                                    <option value="">período</option>
+                                                                    <option value="1">qualquer horário</option>
+                                                                    <option value="2">manhã</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <label>Data de volta</label>
+                                                    <div class="row">
+                                                        <div class="col-xs-6 col-md-5">
+                                                            <div class="datepicker-wrap">
+                                                                <input type="text" class="input-text full-width" placeholder="selecione a data" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xs-6 col-md-5">
+                                                            <div class="selector">
+                                                                <select>
+                                                                    <option value="">período</option>
+                                                                    <option value="1">qualquer horário</option>
+                                                                    <option value="2">manhã</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <hr>
+                                                    <h5 class="title">Quem</h5>
+                                                    <div class="row">
+                                                        <div class="col-xs-4 col-md-3">
+                                                            <label>Adultos</label>
+                                                            <div class="selector">
+                                                                <select>
+                                                                    <option value="1">01</option>
+                                                                    <option value="2">02</option>
+                                                                    <option value="3">03</option>
+                                                                    <option value="4">04</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xs-4 col-md-3">
+                                                            <label>Crianças</label>
+                                                            <div class="selector">
+                                                                <select>
+                                                                    <option value="1">01</option>
+                                                                    <option value="2">02</option>
+                                                                    <option value="3">03</option>
+                                                                    <option value="4">04</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xs-4 col-md-3">
+                                                            <label>Bebês</label>
+                                                            <div class="selector">
+                                                                <select>
+                                                                    <option value="1">01</option>
+                                                                    <option value="2">02</option>
+                                                                    <option value="3">03</option>
+                                                                    <option value="4">04</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <hr>
+                                                    <h5 class="title">Classe <small>(Opcional)</small></h5>
+                                                    <div class="row">
+                                                        <div class="col-xs-6">
+                                                            <label>Classe da viagem</label>
+                                                            <div class="selector">
+                                                                <select>
+                                                                    <option value="">Econômica</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xs-6">
+                                                            <label>Companhia aérea preferida</label>
+                                                            <div class="selector">
+                                                                <select>
+                                                                    <option value="">selecione</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <hr>
+                                                    <button type="button" class="full-width btn-medium">FALE O PREÇO!</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sidebar col-sm-4 col-md-3">
+                            <div class="travelo-box contact-box">
+                                <h4>Precisa de ajuda?</h4>
+                                <p>Ficaremos satisfeitos em ajudá-lo!</p>
+                                <address class="contact-details">
+                                    <span class="contact-phone"><i class="soap-icon-phone"></i> 0800-FALEOPRECO</span>
+                                    <br>
+                                    <a class="contact-email" href="#">ajuda@faleopreco.com</a>
+                                </address>
+                            </div>
+                            <div class="travelo-box book-with-us-box">
+                                <h4>Por que reservar com a gente?</h4>
+                                <ul>
+                                    <li>
+                                        <i class="soap-icon-hotel-1 circle"></i>
+                                        <h5 class="title"><a href="#">+10.000 hotéis</a></h5>
+                                        <p>Os melhores hotéis estão aqui.</p>
+                                    </li>
+                                    <li>
+                                        <i class="soap-icon-savings circle"></i>
+                                        <h5 class="title"><a href="#">Economia</a></h5>
+                                        <p>Você decide o preço que quer pagar.</p>
+                                    </li>
+                                    <li>
+                                        <i class="soap-icon-support circle"></i>
+                                        <h5 class="title"><a href="#">Garantia de satisfação total</a></h5>
+                                        <p>Quando se fala em negociação, não há nada que nos faça parar.</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+
+
+
+
+
+
+
+
+
+
+       

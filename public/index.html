@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<!--[if IE 8]>          <html class="ie ie8"> <![endif]-->
+<!--[if IE 9]>          <html class="ie ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->  
+<html> <!--<![endif]-->
+    <head>
+        <!-- Page Title -->
+        <title>Fale o preço</title>
+        
+        <!-- Meta Tags -->
+        <meta charset="utf-8">
+        <meta name="keywords" content="Fale o preço" />
+        <meta name="description" content="Fale o preço">
+        <meta name="author" content="SoapTheme">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!-- Theme Styles -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <link href='https://fonts.googleapis.com/css?family=Lato:300,400,500,700' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="css/animate.min.css">
+        
+        <!-- Current Page Styles -->
+        <link rel="stylesheet" type="text/css" href="components/revolution_slider/css/settings.css" media="screen" />
+        <link rel="stylesheet" type="text/css" href="components/revolution_slider/css/style.css" media="screen" />
+        <link rel="stylesheet" type="text/css" href="components/jquery.bxslider/jquery.bxslider.css" media="screen" />
+        <link rel="stylesheet" type="text/css" href="components/flexslider/flexslider.css" media="screen" />
+        
+        <!-- Main Style -->
+        <link id="main-style" rel="stylesheet" href="css/style.css">
+        
+        <!-- Updated Styles -->
+        <link rel="stylesheet" href="css/updates.css">
+
+        <!-- Custom Styles -->
+        <link rel="stylesheet" href="css/custom.css">
+        
+        <!-- Responsive Styles -->
+        <link rel="stylesheet" href="css/responsive.css">
+
+        <base href="/" />
+        
+        <!-- CSS for IE -->
+        <!--[if lte IE 9]>
+            <link rel="stylesheet" type="text/css" href="css/ie.css" />
+        <![endif]-->
+        
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+          <script type='text/javascript' src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+          <script type='text/javascript' src="http://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+        <![endif]-->
+    </head>
+
+    <body ng-app="faleoprecoApp">
+        <div id="page-wrapper">
+            <header id="header" class="navbar-static-top" ng-controller="LoginController">
+                <div class="topnav hidden-xs" >
+                    <div class="container">
+                        <ul class="quick-menu pull-left">
+                            <li ng-show="sessao.logado"><a href="" ng-click="carregaHomeLogada()">MINHA CONTA</a></li>
+                            <li class="ribbon">
+                                <a href="#">Português</a>
+                                <ul class="menu mini">
+                                    <li><a href="#" title="Deutsch">Deutsch</a></li>
+                                    <li><a href="#" title="English">English</a></li>
+                                    <li><a href="#" title="Español">Español</a></li>
+                                    <li><a href="#" title="Français">Français</a></li>
+                                    <li><a href="#" title="Italiano">Italiano</a></li>
+                                    <li class="active"><a href="#" title="Português">Português</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <ul class="quick-menu pull-right" ng-show="!sessao.logado">
+                            <li><a href="#travelo-login" class="soap-popupbox">LOGIN</a></li>
+                            <li><a href="#travelo-signup" class="soap-popupbox">CADASTRAR</a></li>
+                        </ul>
+                        <ul class="quick-menu pull-right" ng-show="sessao.logado">
+                            <li class="dropdown">
+                                <a href="" class="dropdown-toggle" data-toggle="dropdown">
+                                    <span class="glyphicon glyphicon-user"></span>&nbsp;
+                                    <strong>Bem vindo(a), {{sessao.nome}}</strong>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="main-header">
+                    
+                    <a href="#mobile-menu-01" data-toggle="collapse" class="mobile-menu-toggle">
+                        Mobile Menu Toggle
+                    </a>
+
+                    <div class="container">
+                        <h1 class="logo navbar-brand" style="margin-top:10px;">
+                            <a href="index.html" title="Fale o preço - home">
+                                <img src="images/logo.png" alt="Fale o preço - home" />
+                            </a>
+                        </h1>
+                        <nav id="main-menu" role="navigation">
+                            <ul class="menu">
+                                <li class="menu-item-has-children">
+                                    <a href="/">Home</a>
+                                </li>
+                                <li class="menu-item-has-children">
+                                    <a ng-href="/" ng-click="setOpcaoHome('hoteis')">Hotéis</a>
+                                </li>
+                                <li class="menu-item-has-children">
+                                    <a ng-href="/" ng-click="setOpcaoHome('voos')">Passagens aéreas</a>
+                                </li>
+                                <li class="menu-item-has-children">
+                                    <a ng-href="/quem-somos">Quem somos</a>
+                                </li>
+                                <li class="menu-item-has-children">
+                                    <a ng-href="/mapa-site">Mapa do site</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    
+                    <nav id="mobile-menu-01" class="mobile-menu collapse">
+                        <ul id="mobile-primary-menu" class="menu">
+                            <li class="menu-item-has-children">
+                                <a href="index.html">Home</a>
+                            </li>
+                            <li class="menu-item-has-children">
+                                <a href="index.html">Hotéis</a>
+                            </li>
+                            <li class="menu-item-has-children">
+                                <a data-target="#flights-tab" href="" data-toggle="tab">Passagens aéreas</a>
+                            </li>
+                            <li class="menu-item-has-children">
+                                <a href="#/quem-somos">Quem somos</a>
+                            </li>
+                            <li class="menu-item-has-children">
+                                <a href="#/mapa-site">Mapa do site</a>
+                            </li>
+                        </ul>
+                        
+                        <ul class="mobile-topnav container">
+                            <li><a href="#">MINHA CONTA<a></li>
+                            <li class="ribbon language menu-color-skin">
+                                <a href="#" data-toggle="collapse">PORTUGUÊS</a>
+                                <ul class="menu mini">
+                                   <li><a href="#" title="Deutsch">Deutsch</a></li>
+                                    <li><a href="#" title="English">English</a></li>
+                                    <li><a href="#" title="Español">Español</a></li>
+                                    <li><a href="#" title="Français">Français</a></li>
+                                    <li><a href="#" title="Italiano">Italiano</a></li>
+                                    <li class="active"><a href="#" title="Português">Português</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <ul class="quick-menu pull-right" ng-show="!sessao.logado">
+                            <li><a href="#travelo-login" class="soap-popupbox">LOGIN</a></li>
+                            <li><a href="#travelo-signup" class="soap-popupbox">CADASTRAR</a></li>
+                        </ul>
+                        <ul class="quick-menu pull-right" ng-show="sessao.logado">
+                            <li class="dropdown">
+                                <a href="" class="dropdown-toggle" data-toggle="dropdown">
+                                    <span class="glyphicon glyphicon-user"></span>&nbsp;
+                                    <strong>Bem vindo(a), {{sessao.nome}}</strong>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div id="travelo-signup" class="travelo-signup-box travelo-box">
+                    <div class="login-social">
+                        <a href="#" class="button login-facebook"><i class="soap-icon-facebook"></i>Login com Facebook</a>
+                        <a href="#" class="button login-googleplus"><i class="soap-icon-googleplus"></i>Login com Google+</a>
+                    </div>
+                    <div class="seperator"><label>OU</label></div>
+                    <div class="simple-signup">
+                        <div class="text-center signup-email-section">
+                            <a href="#" class="signup-email"><i class="soap-icon-letter"></i>Cadastrar com e-mail</a>
+                        </div>
+                        <p class="description">Realizando o cadastro, eu aceito os termos de serviço e políticas de privacidade do faleopreco.com.</p>
+                    </div>
+                    
+                    <div class="email-signup" ng-show="statusCadastro == ''" >
+                        <form name="frmCadastro" id="frmCadastro" ng-submit="frmCadastro.$valid && cadastrarUsuario(cadastro.usuario)" novalidate>
+                            <div class="form-group" ng-class="{ 'has-error' : frmCadastro.nome.$invalid && !frmCadastro.nome.$pristine }">
+                                <input type="text" name="nome" class="form-control full-width" placeholder="primeiro nome" ng-model="cadastro.usuario.nome" required>
+                            </div>
+                            <div class="form-group" ng-class="{ 'has-error' : frmCadastro.sobrenome.$invalid && !frmCadastro.sobrenome.$pristine }">
+                                <input type="text" name="sobrenome" class="form-control full-width" placeholder="sobrenome" ng-model="cadastro.usuario.sobrenome" required>
+                            </div>
+                            <div class="form-group" ng-class="{ 'has-error' : frmCadastro.email.$invalid && !frmCadastro.email.$pristine }">
+                                <input type="email" name="email" class="form-control full-width" placeholder="e-mail" ng-model="cadastro.usuario.id" required>
+                            </div>
+                            <div class="form-group" ng-class="{ 'has-error' : frmCadastro.senha.$invalid && !frmCadastro.senha.$pristine}">
+                                <input type="password" name="senha" class="form-control full-width" placeholder="senha" ng-model="cadastro.usuario.senha" required>
+                            </div>
+                            <div class="form-group" ng-class="{ 'has-error' : (frmCadastro.senhaConf.$invalid && !frmCadastro.senhaConf.$pristine) || frmCadastro.senha.$valid && frmCadastro.senhaConf.$valid && !(cadastro.usuario.senhaConf == cadastro.usuario.senha)}">
+                                <input type="password" name="senhaConf" class="form-control full-width" placeholder="confime a senha" ng-model="cadastro.usuario.senhaConf" required>
+                                <span class="help-block" ng-show="frmCadastro.senha.$valid && frmCadastro.senhaConf.$valid && !(cadastro.usuario.senhaConf == cadastro.usuario.senha)">Senha não confere.</span>
+                            </div>
+                            <div class="form-group">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" ng-model="cadastro.usuario.opcaoManterInformado"> Mantenha-me informado sobre as novidades do faleopreco.com.
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <p class="description">Realizando o cadastro, eu aceito os termos de serviço e políticas de privacidade do faleopreco.com.</p>
+                            </div>
+                            <button type="submit" class="full-width btn-medium" ng-click="submitForm()">CADASTRAR</button> 
+                        </form>
+                    </div>
+                   
+                    <div ng-show="statusCadastro == 'OK'">
+                        <div class="alert alert-success fade in">
+                            <strong>Cadastro realizado com sucesso!</strong> <br>
+                            <span>Clique abaixo para efetuar o login</span>
+                        </div>
+                    </div>
+
+                    <div ng-show="statusCadastro == 'ERR'">
+                        <div class="alert alert-danger fade in">
+                            <strong>Ops! Erro ao realizar o cadastro.</strong>
+                            <span>Por favor tente novamente</span>
+                        </div>
+                    </div>
+
+                    <div class="seperator"></div>
+                    <p>Já possui cadastro? <a href="#travelo-login" class="goto-login soap-popupbox">Login</a></p>
+                </div>
+
+                <div id="travelo-login" class="travelo-login-box travelo-box">
+                    <div class="login-social">
+                        <a href="#" class="button login-facebook"><i class="soap-icon-facebook"></i>Login com Facebook</a>
+                        <a href="#" class="button login-googleplus"><i class="soap-icon-googleplus"></i>Login com Google+</a>
+                    </div>
+                    <div class="seperator"><label>OU</label></div>
+                    <form name="frmLogin" ng-submit="frmLogin.$valid && loginUsuario(login)" novalidate>
+                        <div class="form-group" ng-class="{ 'has-error' : (frmLogin.loginEmail.$invalid && !frmLogin.loginEmail.$pristine) || sessao.statusLogin == 'ERR'}">
+                            <input type="email" name="loginEmail" class="form-control full-width" placeholder="e-mail" ng-model="login.autenticacao.usuario_email" required>
+                        </div>
+                        <div class="form-group" ng-class="{ 'has-error' : (frmLogin.loginSenha.$invalid && !frmLogin.loginSenha.$pristine) || sessao.statusLogin == 'ERR'}">
+                            <input type="password" name="loginSenha" class="form-control full-width" placeholder="senha" ng-model="login.autenticacao.usuario_senha" required>
+                            <span class="help-block" ng-show="sessao.statusLogin == 'ERR'">{{sessao.mensagemErro}}</span>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="full-width btn-medium" ng-click="submitFormLogin">LOGIN</button> 
+                        </div>
+
+                        <div class="form-group">
+                            <a href="#" class="forgot-password pull-right">Esqueceu sua senha?</a>
+                            <div class="checkbox checkbox-inline">
+                                <label>
+                                    <input type="checkbox"> Lembrar-me
+                                </label>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="seperator"></div>
+                    <p>Não possui uma conta? <a href="#travelo-signup" class="goto-signup soap-popupbox">Cadastre-se</a></p>
+                </div>
+            </header>
+            
+            <div ng-view></div>
+            
+            <footer id="footer">
+                <div class="footer-wrapper">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-6 col-md-3">
+                                <h2>Descubra</h2>
+                                <ul class="discover triangle hover row">
+                                    <li class="col-xs-6"><a href="#">Segurança</a></li>
+                                    <li class="col-xs-6"><a href="#">Sobre nós</a></li>
+                                    <li class="col-xs-6"><a href="#">Afilie-se</a></li>
+                                    <li class="col-xs-6"><a href="#">Trabalhe conosco</a></li>
+                                    <li class="col-xs-6"><a href="#">Mobile</a></li>
+                                    <li class="col-xs-6"><a href="#">Na mídia</a></li>
+                                    <li class="col-xs-6"><a href="#">Parceiros</a></li>
+                                    <li class="col-xs-6"><a href="#">Ajuda</a></li>
+                                    <li class="col-xs-6"><a href="#">Mapa do site</a></li>
+                                    <li class="col-xs-6"><a href="#">Privacidade</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-sm-6 col-md-3">
+                                <h2>Notícias de viagens</h2>
+                                <ul class="travel-news">
+                                    <li>
+                                        <div class="thumb">
+                                            <a href="#">
+                                                <img src="images/63x63.png" alt="" width="63" height="63" />
+                                            </a>
+                                        </div>
+                                        <div class="description">
+                                            <h5 class="s-title"><a href="#">Lugares incríveis</a></h5>
+                                            <p>Os lugares mais incríveis para viajar no Brasil.</p>
+                                            <span class="date">25 Set 2015</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="thumb">
+                                            <a href="#">
+                                                <img src="images/63x63.png" alt="" width="63" height="63" />
+                                            </a>
+                                        </div>
+                                        <div class="description">
+                                            <h5 class="s-title"><a href="#">Seguro viagem</a></h5>
+                                            <p>Guia rápido para contratação de seguro viagem internacional.</p>
+                                            <span class="date">24 Set 2015</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-sm-6 col-md-3">
+                                <h2>Lista de e-mail</h2>
+                                <p>Assine nossa lista para receber as últimas atualizações e ofertas.</p>
+                                <br />
+                                <div class="icon-check">
+                                    <input type="text" class="input-text full-width" placeholder="seu e-mail" />
+                                </div>
+                                <br />
+                                <span>Nós respeitamos a sua privacidade</span>
+                            </div>
+                            <div class="col-sm-6 col-md-3">
+                                <h2>Sobre faleopreco.com</h2>
+                                <p>Quando se fala em negociação, não há nada que nos faça parar!</p>
+                                <br />
+                                <address class="contact-details">
+                                    <span class="contact-phone"><i class="soap-icon-phone"></i> 0800-FALEOPRECO</span>
+                                    <br />
+                                    <a href="#" class="contact-email">ajuda@faleopreco.com</a>
+                                </address>
+                                <ul class="social-icons clearfix">
+                                    <li class="twitter"><a title="twitter" href="#" data-toggle="tooltip"><i class="soap-icon-twitter"></i></a></li>
+                                    <li class="googleplus"><a title="googleplus" href="#" data-toggle="tooltip"><i class="soap-icon-googleplus"></i></a></li>
+                                    <li class="facebook"><a title="facebook" href="#" data-toggle="tooltip"><i class="soap-icon-facebook"></i></a></li>
+                                    <li class="linkedin"><a title="linkedin" href="#" data-toggle="tooltip"><i class="soap-icon-linkedin"></i></a></li>
+                                    <li class="vimeo"><a title="vimeo" href="#" data-toggle="tooltip"><i class="soap-icon-vimeo"></i></a></li>
+                                    <li class="dribble"><a title="dribble" href="#" data-toggle="tooltip"><i class="soap-icon-dribble"></i></a></li>
+                                    <li class="flickr"><a title="flickr" href="#" data-toggle="tooltip"><i class="soap-icon-flickr"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bottom gray-area">
+                    <div class="container">
+                        <div class="logo pull-left">
+                            <a href="index.html" title="Fale o preço - home">
+                                <img src="images/logo.png" alt="Fale o preço" />
+                            </a>
+                        </div>
+                        <div class="pull-right">
+                            <a id="back-to-top" href="#" class="animated" data-animation-type="bounce"><i class="soap-icon-longarrow-up circle"></i></a>
+                        </div>
+                        <div class="copyright pull-right">
+                            <p>&copy; 2016 Fale o preço</p>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        
+        <!-- Javascript -->
+        <script type="text/javascript" src="js/bootstrap/jquery-1.11.1.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap/jquery.noconflict.js"></script>
+        <script type="text/javascript" src="js/bootstrap/modernizr.2.7.1.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap/jquery-migrate-1.2.1.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap/jquery.placeholder.js"></script>
+        <script type="text/javascript" src="js/bootstrap/jquery-ui.1.10.4.min.js"></script>
+        
+        <!-- Twitter Bootstrap -->
+        <script type="text/javascript" src="js/bootstrap/bootstrap.js"></script>
+
+        <!-- load revolution slider scripts -->
+        <script type="text/javascript" src="components/revolution_slider/js/jquery.themepunch.plugins.min.js"></script>
+        <script type="text/javascript" src="components/revolution_slider/js/jquery.themepunch.revolution.min.js"></script>
+
+        <!-- Flex Slider -->
+        <script type="text/javascript" src="components/flexslider/jquery.flexslider-min.js"></script>
+        
+        <!-- load BXSlider scripts -->
+        <script type="text/javascript" src="components/jquery.bxslider/jquery.bxslider.min.js"></script>
+        
+        <!-- parallax -->
+        <script type="text/javascript" src="js/bootstrap/jquery.stellar.min.js"></script>
+        
+        <!-- waypoint -->
+        <script type="text/javascript" src="js/bootstrap/waypoints.min.js"></script>
+
+        <!-- Google Map Api -->
+        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false"></script>
+    
+        <!-- calendar -->
+        <script type="text/javascript" src="js/bootstrap/calendar.js"></script>
+
+        <!-- load page Javascript -->
+        <script type="text/javascript" src="js/bootstrap/theme-scripts.js"></script>
+        <script type="text/javascript" src="js/bootstrap/scripts.js"></script>
+
+        <!-- angular-->
+        <script type="text/javascript" src="js/angular-1.5.0/angular.js"></script>
+        <script type="text/javascript" src="js/angular-1.5.0/angular-route.js"></script>
+        <script type="text/javascript" src="js/angular-1.5.0/angular-resource.js"></script>
+        <script type="text/javascript" src="js/angular-1.5.0/ui-bootstrap-tpls-1.2.4.min.js"></script>
+        
+        <script src="js/app.js"></script>
+        <script src="js/services.js"></script>
+        <script src="js/controllers.js"></script>
+        <script src="js/usuarioController.js"></script>
+        <script src="js/homeLogadaController.js"></script>
+    </body>
+</html>
+
